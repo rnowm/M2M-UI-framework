@@ -1,0 +1,8 @@
+/*----------------------------------------------*/
+/*  CSS Markup by Arnau March @ PDI             */
+/*  Fixes for ie 7                              */
+/*----------------------------------------------*/
+
+ul.panel li > .panel-header {
+	margin-bottom: -3px;
+}

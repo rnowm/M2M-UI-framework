@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>UX guidelines</title>
+    <link rel="stylesheet" type="text/css" href="js/prettify/prettify.css" />
+    <link id="theme-css" rel="stylesheet" type="text/css" href="css/basic.css" />
+    <!-- The following Inline style only applies to the examples, you don´t need it for your code --> 
+    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="js/prettify/prettify.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/csTransPie.js"></script>
+    <script type="text/javascript" src="js/jquery.tipsy.js"></script>
+    <script type="text/javascript" src="js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="js/GUX.js"></script>
+    <!-- Read this: demo_only.js is used for some extra code for this guide, maybe you don´t need it! --> 
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/demo_only.js"></script>
+
+    <script type="text/javascript" src="js/jquery.layout.js"></script>
+</head>
+<!-- Use only prettify (body onload, js and css links) in case you want to format code coloring -->
+<body onload="prettyPrint()">
+    <div id="app-header" class="app-north">
+        <h1><a href="#">product name</a></h1>
+        <ul class="links">
+            <li><strong>Welcome! </strong>Use the following links to change theme</li>
+            <li><a href="#" rel="css/basic.css">White label</a></li>
+            <li><a href="#" rel="css/movistar.css">Movistar</a></li>
+            <li><a href="#" rel="css/vivo.css">Vivo</a></li>
+        </ul>
+        <div id="company-logo" class="clearR"><a href="#">company logo</a></div>
+    </div> <!-- /app-header -->
+
+    <ul id="app-menu" class="app-west">
+        <li class="icon-1"><a href="index.html">Basic Structure</a></li>
+        <li class="icon-2 selected"><a href="column.html">Left Column</a></li>
+        <li class="icon-3"><a href="actions.html">Massive Actions</a></li>
+    </ul>
+
+    <div id="app-content" class="app-center">
+        <ul id="app-section-title" class="content-north">
+            <li><a href="#">Menu Name</a></li>
+            <li><span>/</span></li>
+            <li><a href="#">Section Name</a></li>
+            <li class="right"><span>WARNING: Work in process! This code could change until V1 is released.</span></li>
+        </ul>     
+
+        <div class="content-list content-west">
+            <div class="searchBox list-north">
+                <input type="text" placeholder="Search" />
+                <input type="submit" value="" />
+            </div>
+
+            <ul class="item-list list-center ui-layout-content">
+                <li class="active"><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <ul class="grouped">
+                    <li><span>Group Title</span></li>
+                    <li><a href="#">Item 3</a></li>
+                    <li><a href="#">Item 4</a></li>
+                    <li><a href="#">Item 5</a></li>
+                </ul>
+                <li><a href="#">Item 6</a></li>
+                <li><a href="#">Item 7</a></li>
+                <ul class="collapsible">
+                    <li><a href="#">Collapsible Title</a></li>
+                    <ul>
+                        <li><a href="#">Item 8</a></li>
+                        <li><a href="#">Item 9</a></li>
+                        <li><a href="#">Item 10</a></li>
+                    </ul>
+                </ul>
+            </ul>
+
+            <ul class="list-toolbar list-south">
+                <li class="add"><a href="#">Add</a></li>
+                <li class="remove"><a href="#">Remove</a></li>
+            </ul>
+        </div> <!-- /content-list -->
+
+        <div class="content-body content-center ui-layout-content">
+            <div class="title-toolbar">
+                <h2>Item 1</h2>
+            </div>
+            <ul class="panel">                   
+                <li class="collapsible open" data-title="Panel">Content goes here!</li>  
+            </ul> <!-- /panel -->
+        </div> <!-- /content-body -->
+
+    </div> <!-- /app-content --> 
+</body>
+</html>

@@ -1,0 +1,99 @@
+/*----------------------------------------------*/
+/*  CSS Markup by Arnau March @ PDI             */
+/*  Supported Markup for ie >= 7                */
+/*  CSS3 used for non-relevant design details.  */
+/*----------------------------------------------*/
+
+$basic-path: "../images/basic";
+$theme-path: "../images/vivo";
+
+$font-family: Arial;
+$large-button-padding: 15px;
+$large-button-height: 27px;
+$large-button-line-height: 27px;
+$large-button-color: #46565e;
+$medium-button-padding: 15px;
+$medium-button-height: 23px;
+$medium-button-line-height: 23px;
+$medium-button-color: #46565e;
+$small-button-padding: 15px;
+$small-button-height: 23px;
+$small-button-line-height: 23px;
+$small-button-color: #46565e;
+
+$list-bkg-color: #BCC4C7;
+$list-search-bkg-color: #C9D2D5;
+
+@font-face {
+  font-family: 'officinaserifitcttbook';
+  src: url("officinaserifitcttbold.eot");
+  src: url("officinaserifitcttbold.eot?#iefix") format("embedded-opentype"), url("#{$theme-path}/fonts/officinaserifitcttbold.woff") format("woff"), url("officinaserifitcttbold.ttf") format("truetype"), url("officinaserifitcttbold.svg#officinaserifitcttbold") format("svg");
+  font-weight: bold;
+  font-style: normal; 
+}
+
+@import "reset.scss";
+@import "css3.scss";
+@import "buttons.scss";
+@import "form_elements.scss";
+@import "tooltips.scss";
+@import "tables.scss";
+@import "style.scss"; 
+
+/* Overwrite BASIC.CSS markup to customize this theme */
+#app-header {
+    height: 95px !important;
+    background: #fff;
+}
+    #app-header h1 a {
+        width: 204px;
+        height: 26px;
+        margin: 0;
+        display: block;
+        position: absolute;
+        padding: 0;
+        right: 25px;
+        top: 45px;
+    }
+    #app-header ul.links {
+        height: 23px;
+        position: absolute;
+        padding: 0;
+        right: 15px;
+        top: 0;
+    }
+        #app-header ul.links li span,
+        #app-header ul.links li a {
+            background: none;
+            color: #007AC0 !important;
+            font-family: 'officinaserifitcttbook', Helvetica, Arial, sans-serif !important;
+            line-height: 23px;
+        }
+            #app-header ul.links li.header-menu > ul,
+            #app-header ul.links li.header-menu > div {
+                top: 38px;
+            }
+                #app-header ul.links li.header-menu ul li {
+                    padding: 0;
+                } 
+
+    #company-logo {
+        background: url("#{$theme-path}/company_logo.png") no-repeat;
+        width: 130px;
+        height: 50px;
+        margin: 0;
+        display: block;
+        position: absolute;
+        padding: 0;
+        left: 25px;
+        top: 23px;
+        text-indent: -9999px;
+    }
+
+/* Buttons */
+div.button.large i,
+div.button.medium i,
+div.button.small i {
+    font-family: "officinaserifitcttbook", Helvetica, Arial, sans-serif !important;
+}
+

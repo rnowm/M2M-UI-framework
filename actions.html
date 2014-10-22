@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>UX guidelines</title>
+    <link rel="stylesheet" type="text/css" href="js/prettify/prettify.css" />
+    <link id="theme-css" rel="stylesheet" type="text/css" href="css/basic.css" />
+    <!-- The following Inline style only applies to the examples, you don´t need it for your code --> 
+    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="js/prettify/prettify.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/csTransPie.js"></script>
+    <script type="text/javascript" src="js/jquery.tipsy.js"></script>
+    <script type="text/javascript" src="js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="js/GUX.js"></script>
+    <!-- Read this: demo_only.js is used for some extra code for this guide, maybe you don´t need it! --> 
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/demo_only.js"></script>
+
+    <script type="text/javascript" src="js/jquery.layout.js"></script>
+</head>
+<!-- Use only prettify (body onload, js and css links) in case you want to format code coloring -->
+<body onload="prettyPrint()">
+    <div id="app-header" class="app-north">
+        <h1><a href="#">product name</a></h1>
+        <ul class="links">
+            <li><strong>Welcome! </strong>Use the following links to change theme</li>
+            <li><a href="#" rel="css/basic.css">White label</a></li>
+            <li><a href="#" rel="css/movistar.css">Movistar</a></li>
+            <li><a href="#" rel="css/vivo.css">Vivo</a></li>
+        </ul>
+        <div id="company-logo" class="clearR"><a href="#">company logo</a></div>
+    </div> <!-- /app-header -->
+
+    <ul id="app-menu" class="app-west">
+        <li class="icon-1"><a href="index.html">Basic Structure</a></li>
+        <li class="icon-2"><a href="column.html">Left Column</a></li>
+        <li class="icon-3 selected"><a href="actions.html">Massive Actions</a></li>
+    </ul>
+
+    <div id="app-content" class="app-center app-massive">
+        <ul id="app-section-title" class="content-north">
+            <li><a href="#">Menu Name</a></li>
+            <li><span>/</span></li>
+            <li><a href="#">Section Name</a></li>
+            <li class="right"><span>WARNING: Work in process! This code could change until V1 is released.</span></li>
+        </ul>     
+
+        <div class="content-body content-center ui-layout-content">
+            <div class="title-toolbar">
+                <h2>Section Title</h2>
+            </div>
+        </div> <!-- /content-body -->
+        
+        <div class="content-south massive-actions disabled">
+            <div class="left">
+                <!--span class="grouped-buttons">
+                    <button class="button medium neutral">Do something</button>
+                    <button class="button medium neutral">Something else</button>
+                </span-->
+                <button class="button medium neutral">Do something</button>
+                <label>Nothing selected</label>
+            </div>
+            <ul class="massive-actions-tb">
+                <li>
+                    <button>Actions Group 1</button>
+                    <ul>
+                        <li>Actions Group 1 - Item 1</li>
+                        <li>Actions Group 1 - Item 2</li>
+                        <li>Actions Group 1 - Item 3</li>
+                        <li>Actions Group 1 - Item 4</li>
+                        <li>Actions Group 1 - Item 5</li>
+                    </ul>
+                </li>
+                <li>
+                    <button>Actions Group 2</button>
+                    <ul>
+                        <li>Actions Group 2 - Item 1</li>
+                        <li>Actions Group 2 - Item 2</li>
+                        <li>Actions Group 2 - Item 3</li>
+                    </ul>
+                </li>
+                <li>
+                    <button>Actions Group 3</button>
+                    <ul>
+                        <li>Actions Group 3 - Item 1</li>
+                        <li>Actions Group 3 - Item 2</li>
+                        <li>Actions Group 3 - Item 3</li>
+                        <li>Actions Group 3 - Item 4</li>
+                        <li>Actions Group 3 - Item 5</li>
+                    </ul>
+                </li>
+                <li>
+                    <button>Action 4</button>
+                </li>
+            </ul>
+        </div> <!-- /content-south -->
+
+    </div> <!-- /app-content --> 
+</body>
+</html>

@@ -1,0 +1,56 @@
+/*  TOOLTIPS  */
+ .tipsy { padding: 5px; font-size: 10px; position: absolute; z-index: 100000; }
+  .tipsy-inner { padding: 5px 8px 4px 8px; background-color: black; color: white; max-width: 200px; text-align: center; }
+  .tipsy-inner { border-radius: 3px; -moz-border-radius:3px; -webkit-border-radius:3px; }
+  .tipsy-arrow { position: absolute; 
+      background: url('#{$basic-path}/sprites/tipsy.gif') no-repeat top left;       
+      width: 9px; height: 5px; }
+  .tipsy-n .tipsy-arrow { top: 0; left: 50%; margin-left: -4px; }
+    .tipsy-nw .tipsy-arrow { top: 0; left: 10px; }
+    .tipsy-ne .tipsy-arrow { top: 0; right: 10px; }
+  .tipsy-s .tipsy-arrow { bottom: 0; left: 50%; margin-left: -4px; background-position: bottom left; }
+    .tipsy-sw .tipsy-arrow { bottom: 0; left: 10px; background-position: bottom left; }
+    .tipsy-se .tipsy-arrow { bottom: 0; right: 10px; background-position: bottom left; }
+  .tipsy-e .tipsy-arrow { top: 50%; margin-top: -4px; right: 0; width: 5px; height: 9px; background-position: top right; }
+  .tipsy-w .tipsy-arrow { top: 50%; margin-top: -4px; left: 0; width: 5px; height: 9px; }
+
+/* Menu tooltip */ 
+.tipsy-w .tipsy-inner { 
+    background: #fffde0;
+    line-height: 37px;
+    height: 37px;
+    padding: 0 20px 0 20px;
+    color: #46565E;
+    font-size: 13px;
+    margin-left: 5px;
+    border: 1px solid rgba(0,0,0,0.1); 
+    margin-top:-9px;
+}
+    .tipsy-w .tipsy-arrow { 
+        margin-top: -9px; 
+        left: 5px; 
+        width: 6px; 
+        height: 9px; 
+        background: url('#{$basic-path}/backgrounds/menu_tip_w.png') no-repeat;
+    } 
+
+/* Error tooltip */ 
+.tipsy-n { 
+    margin-top: 1px;
+}
+.tipsy-n .tipsy-inner { 
+    padding: 5px 10px;
+    border: 1px solid #ff6600; 
+    background: #ffddc7 url('#{$basic-path}/backgrounds/error_tip.png') 0 bottom repeat-x;
+    border: 1px solid #ff6000;
+    @include border-radius(6px);
+    color: #333;
+    font-size: 12px;
+}
+    .tipsy-n .tipsy-arrow { 
+        margin-top: -2px;
+        width: 14px; 
+        height: 9px; 
+        background: url('#{$basic-path}/backgrounds/error_tip_n.png') no-repeat;
+    } 
+       

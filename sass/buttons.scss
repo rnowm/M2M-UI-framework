@@ -1,0 +1,332 @@
+/* ------------------------------ */
+/*    CSS By Arnau March @ PDI    */
+/*  Supported Markup for ie >= 7  */
+/* ------------------------------ */
+
+/* ----- BUTTONS: ------------------------------------------ */
+/*   div.button:        markup for left side                 */
+/*   div.button span:   markup for right side                */
+/*   div.button button: markup for middle of the button      */
+/*   div.button i:      markup for text                      */
+/* --------------------------------------------------------- */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner { /* FIX: Remove button padding in FF */
+  border: 0;
+  padding: 0;
+}
+
+div.button {
+  padding-right: 15px;
+  cursor: pointer;
+  display: inline-block;
+  /* ie7 hack */
+  zoom: 1;
+  *display: inline;
+}
+div.button.last {
+  padding-right: 0 !important;
+}
+div.button.disabled {
+  cursor: default;
+}
+div.button {
+            
+}
+div.button i {
+  font-style: normal;
+}
+
+/* ----- BUTTONS: Large ----- */
+$bk-pos: -360px;
+
+div.button.large {
+  background: transparent url("#{$theme-path}/sprites/buttons_large.png") 0 $bk-pos no-repeat;
+  width: auto !important;
+  padding-left: $large-button-padding;
+  height: $large-button-height;
+}
+.modalTB div.button.large:first-child {
+  margin-left: $large-button-padding;
+}
+div.button.large.over     { background-position: 0 $bk-pos - 90px; }
+div.button.large.pressed  { background-position: 0 $bk-pos - 180px; }
+div.button.large.disabled { background-position: 0 $bk-pos - 270px; }
+
+div.button.large span {
+  background: transparent url("#{$theme-path}/sprites/buttons_large.png") right $bk-pos - 30px no-repeat;
+  display: block;
+  overflow: hidden;
+}
+div.button.large.over span     { background-position: right $bk-pos - 120px; }
+div.button.large.pressed span  { background-position: right $bk-pos - 210px; }
+div.button.large.disabled span { background-position: right $bk-pos - 300px; }
+
+div.button.large a,
+div.button.large input,
+div.button.large button {
+  background: transparent url("#{$theme-path}/sprites/buttons_large.png") 0 $bk-pos - 60px repeat-x;
+  margin: 0;
+  margin-right: $large-button-padding;
+  display: block;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  min-width: 90px;
+  line-height: $large-button-height;
+  height: $large-button-height;
+}
+div.button.large.over a,
+div.button.large.over input,
+div.button.large.over button     { background-position: 0 $bk-pos - 150px; }
+div.button.large.pressed a,
+div.button.large.pressed input,
+div.button.large.pressed button  { background-position: 0 $bk-pos - 240px; }
+div.button.large.disabled a,
+div.button.large.disabled input,
+div.button.large.disabled button { background-position: 0 $bk-pos - 330px; cursor: auto; }
+
+div.button.large i {
+  font-size: 14px;
+  font-family: $font-family !important;
+  color: $large-button-color;
+  line-height: $large-button-line-height;
+  text-align: center;
+  font-weight: bold;
+  padding: 0;
+  display: block;
+}
+div.button.large.over i     { color: $large-button-color; }
+div.button.large.disabled i { color: $large-button-color;
+@include opacity(0.7); }
+
+/* ----- BUTTONS: Large affirmative (green), negative (red) and neutral (blue) ----- */
+@each $colorbtn in  affirmative, negative, neutral {
+  @if $colorbtn == affirmative {
+    $bk-pos: 0;
+  } @else if $colorbtn == negative {
+    $bk-pos: -720px;
+  } @else if $colorbtn == neutral {
+    $bk-pos: -1080px;
+  }
+
+  div.button.large.#{$colorbtn}          { background-position: 0 $bk-pos; }
+  div.button.large.#{$colorbtn}.over     { background-position: 0 $bk-pos - 90px; }
+  div.button.large.#{$colorbtn}.pressed  { background-position: 0 $bk-pos - 180px; }
+  div.button.large.#{$colorbtn}.disabled { background-position: 0 $bk-pos - 270px; }
+
+  div.button.large.#{$colorbtn} span          { background-position: right $bk-pos - 30px; }
+  div.button.large.#{$colorbtn}.over span     { background-position: right $bk-pos - 120px; }
+  div.button.large.#{$colorbtn}.pressed span  { background-position: right $bk-pos - 210px; }
+  div.button.large.#{$colorbtn}.disabled span { background-position: right $bk-pos - 300px; }
+
+  div.button.large.#{$colorbtn} a,
+  div.button.large.#{$colorbtn} input,
+  div.button.large.#{$colorbtn} button          { background-position: 0 $bk-pos - 60px; }
+  div.button.large.#{$colorbtn}.over a,
+  div.button.large.#{$colorbtn}.over input,
+  div.button.large.#{$colorbtn}.over button     { background-position: 0 $bk-pos - 150px; }
+  div.button.large.#{$colorbtn}.pressed a,
+  div.button.large.#{$colorbtn}.pressed input,
+  div.button.large.#{$colorbtn}.pressed button  { background-position: 0 $bk-pos - 240px; }
+  div.button.large.#{$colorbtn}.disabled a,
+  div.button.large.#{$colorbtn}.disabled input,
+  div.button.large.#{$colorbtn}.disabled button { background-position: 0 $bk-pos - 330px; }
+
+  div.button.large.#{$colorbtn} i          { color: #fff; }
+  div.button.large.#{$colorbtn}.over i     { color: #fff; }
+  div.button.large.#{$colorbtn}.disabled i { color: #fff; }
+} /*end @each*/
+
+/* ----- BUTTONS: Medium ----- */
+$bk-pos: -300px;
+
+div.button.medium {
+  padding-right: 10px;
+  width: auto !important;
+  background: transparent url("#{$theme-path}/sprites/buttons_medium.png") 0 $bk-pos no-repeat;
+  padding-left: $medium-button-padding;
+  height: $medium-button-height;
+}
+div.button.medium.over     { background-position: 0 $bk-pos - 75px; }
+div.button.medium.pressed  { background-position: 0 $bk-pos - 150px; }
+div.button.medium.disabled { background-position: 0 $bk-pos - 225px; }
+
+div.button.medium span {
+  background: transparent url("#{$theme-path}/sprites/buttons_medium.png") right $bk-pos - 25px no-repeat;
+  display: block;
+  overflow: hidden;
+}
+div.button.medium.over span     { background-position: right $bk-pos - 100px; }
+div.button.medium.pressed span  { background-position: right $bk-pos - 175px; }
+div.button.medium.disabled span { background-position: right $bk-pos - 250px; }
+
+div.button.medium.combo span          { background-position: right $bk-pos - 300px; }
+div.button.medium.combo.over span     { background-position: right $bk-pos - 325px; }
+div.button.medium.combo.pressed span  { background-position: right $bk-pos - 350px; }
+div.button.medium.combo.disabled span { background-position: right $bk-pos - 375px; }
+
+div.button.medium a,
+div.button.medium button {
+  background: transparent url("#{$theme-path}/sprites/buttons_medium.png") 0 $bk-pos - 50px repeat-x;
+  margin: 0;
+  margin-right: $medium-button-padding;
+  display: block;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  min-width: 60px;
+  line-height: $medium-button-height;
+  height: $medium-button-height;
+}
+div.button.medium.over a,
+div.button.medium.over button     { background-position: 0 $bk-pos - 125px; }
+div.button.medium.pressed a,
+div.button.medium.pressed button  { background-position: 0 $bk-pos - 200px; }
+div.button.medium.disabled a,
+div.button.medium.disabled button { background-position: 0 $bk-pos - 275px; cursor: auto; }
+
+div.button.medium i {
+  height: $medium-button-height;
+  font-size: 12px;
+  font-family: $font-family !important;
+  color: $medium-button-color;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: bold;
+  display: block;
+}
+div.button.medium.over i     { color: $medium-button-color; }
+div.button.medium.disabled i { color: $medium-button-color;
+@include opacity(0.7); }
+div.button.medium.combo i    { padding-right: 10px; }
+
+/* ----- BUTTONS: Medium  affirmative (green), negative (red) and neutral (blue) ----- */
+@each $colorbtn in affirmative, negative, neutral {
+
+  @if $colorbtn == affirmative {
+    $bk-pos: 0;
+  } @else if $colorbtn == negative {
+    $bk-pos: -700px;
+  } @else if $colorbtn == neutral {
+    $bk-pos: -1000px;
+  }
+
+  div.button.medium.#{$colorbtn}          { background-position: 0 $bk-pos; }
+  div.button.medium.#{$colorbtn}.over     { background-position: 0 $bk-pos - 75px; }
+  div.button.medium.#{$colorbtn}.pressed  { background-position: 0 $bk-pos - 150px; }
+  div.button.medium.#{$colorbtn}.disabled { background-position: 0 $bk-pos - 225px; }
+
+  div.button.medium.#{$colorbtn} span          { background-position: right $bk-pos - 25px; }
+  div.button.medium.#{$colorbtn}.over span     { background-position: right $bk-pos - 100px; }
+  div.button.medium.#{$colorbtn}.pressed span  { background-position: right $bk-pos - 175px; }
+  div.button.medium.#{$colorbtn}.disabled span { background-position: right $bk-pos - 250px; }
+
+  div.button.medium.#{$colorbtn} a,
+  div.button.medium.#{$colorbtn} button          { background-position: 0 $bk-pos - 50px;  }
+  div.button.medium.#{$colorbtn}.over a,
+  div.button.medium.#{$colorbtn}.over button      { background-position: 0 $bk-pos - 125px; }
+  div.button.medium.#{$colorbtn}.pressed a,
+  div.button.medium.#{$colorbtn}.pressed button  { background-position: 0 $bk-pos - 200px; }
+  div.button.medium.#{$colorbtn}.disabled a,
+  div.button.medium.#{$colorbtn}.disabled button { background-position: 0 $bk-pos - 275px; }
+
+  div.button.medium.#{$colorbtn} i          { color: #fff; }
+  div.button.medium.#{$colorbtn}.over i     { color: #fff; }
+  div.button.medium.#{$colorbtn}.disabled i { color: #fff; }
+} /*end @each*/
+
+/* ----- BUTTONS: Small ----- */
+$bk-pos: -0px;
+
+div.button.small {
+  background: transparent url("#{$theme-path}/sprites/buttons_small.png") 0 $bk-pos no-repeat;
+  padding-right: 10px;
+  width: auto !important;
+  padding-left: $small-button-padding;
+  height: $small-button-height;
+}
+div.button.small.over     { background-position: 0 $bk-pos - 75px; }
+div.button.small.pressed  { background-position: 0 $bk-pos - 150px; }
+div.button.small.disabled { background-position: 0 $bk-pos - 225px; }
+
+div.button.small span {
+  background: transparent url("#{$theme-path}/sprites/buttons_small.png") right $bk-pos - 25px no-repeat;
+  display: block;
+  overflow: hidden;
+}
+div.button.small.over span     { background-position: right $bk-pos - 100px; }
+div.button.small.pressed span  { background-position: right $bk-pos - 175px; }
+div.button.small.disabled span { background-position: right $bk-pos - 250px; }
+
+div.button.small a,
+div.button.small button {
+  background: transparent url("#{$theme-path}/sprites/buttons_small.png") 0 $bk-pos - 50px repeat-x;
+  margin: 0;
+  margin-right: $small-button-padding;
+  display: block;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  line-height: $small-button-height;
+  height: $small-button-height;
+}
+div.button.small.over a,
+div.button.small.over button     { background-position: 0 $bk-pos - 125px; }
+div.button.small.pressed a,
+div.button.small.pressed button  { background-position: 0 $bk-pos - 200px; }
+div.button.small.disabled a,
+div.button.small.disabled button { background-position: 0 $bk-pos - 275px; cursor: auto; }
+
+div.button.small i {
+  font-family: $font-family !important;
+  text-align: center;
+  display: block;
+  font-size: 11px;
+  color: $small-button-color;
+  text-align: center;
+  font-weight: normal;
+  padding-top: 1px;
+  .padding-top: 0px; /*ie7 fix*/
+}
+div.button.small.over i     { color: $small-button-color; }
+div.button.small.disabled i { color: $small-button-color;
+@include opacity(0.7); }
+
+/* ----- BUTTONS: Small dark and blue ----- */
+@each $colorbtn in dark, neutral, light {
+
+  $txt-color: #46565e;
+  @if $colorbtn == dark {
+    $bk-pos: -300px;
+    $txt-color: #fff;
+  } @else if $colorbtn == neutral {
+    $bk-pos: -600px;
+  } @else if $colorbtn == light {
+    $bk-pos: -900px;
+  }
+
+  div.button.small.#{$colorbtn}          { background-position: 0 $bk-pos; }
+  div.button.small.#{$colorbtn}.over     { background-position: 0 $bk-pos - 75px; }
+  div.button.small.#{$colorbtn}.pressed  { background-position: 0 $bk-pos - 150px; }
+  div.button.small.#{$colorbtn}.disabled { background-position: 0 $bk-pos - 225px; }
+
+  div.button.small.#{$colorbtn} span          { background-position: right $bk-pos - 25px; }
+  div.button.small.#{$colorbtn}.over span     { background-position: right $bk-pos - 100px; }
+  div.button.small.#{$colorbtn}.pressed span  { background-position: right $bk-pos - 175px; }
+  div.button.small.#{$colorbtn}.disabled span { background-position: right $bk-pos - 250px; }
+
+  div.button.small.#{$colorbtn} a,
+  div.button.small.#{$colorbtn} button          { background-position: 0 $bk-pos - 50px;  }
+  div.button.small.#{$colorbtn}.over a,
+  div.button.small.#{$colorbtn}.over button     { background-position: 0 $bk-pos - 125px; }
+  div.button.small.#{$colorbtn}.pressed a,
+  div.button.small.#{$colorbtn}.pressed button  { background-position: 0 $bk-pos - 200px; }
+  div.button.small.#{$colorbtn}.disabled a,
+  div.button.small.#{$colorbtn}.disabled button { background-position: 0 $bk-pos - 275px; }
+
+  div.button.small.#{$colorbtn} i          { color: $txt-color !important; }
+  div.button.small.#{$colorbtn}.over i     { color: $txt-color !important; }
+  div.button.small.#{$colorbtn}.disabled i { color: $txt-color !important; }
+} /*end @each*/
+

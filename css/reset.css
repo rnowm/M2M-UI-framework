@@ -1,0 +1,46 @@
+/* line 1, ../sass/reset.scss */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 4, ../sass/reset.scss */
+fieldset, img {
+  border: 0;
+}
+
+/* line 7, ../sass/reset.scss */
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* line 10, ../sass/reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 13, ../sass/reset.scss */
+caption, th {
+  text-align: left;
+}
+
+/* line 16, ../sass/reset.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+/* line 19, ../sass/reset.scss */
+q:before, q:after {
+  content: '';
+}
+
+/* line 22, ../sass/reset.scss */
+strong {
+  font-weight: bold;
+}
+
+/* line 25, ../sass/reset.scss */
+a {
+  text-decoration: none;
+}

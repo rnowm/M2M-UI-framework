@@ -1,0 +1,77 @@
+/*----------------------------------------------*/
+/*  CSS Markup by Arnau March @ PDI             */
+/*  Supported Markup for ie >= 7                */
+/*  CSS3 used for non-relevant design details.  */
+/*----------------------------------------------*/
+
+$basic-path: "../images/basic";
+$theme-path: "../images/movistar";
+
+$font-family: Verdana, sans-serif;
+$large-button-padding: 14px;
+$large-button-height: 30px;
+$large-button-line-height: 27px !important;
+$large-button-color: #fff;
+$medium-button-padding: 12px;
+$medium-button-height: 23px;
+$medium-button-line-height: 23px;
+$medium-button-color: #fff;
+$small-button-padding: 15px;
+$small-button-height: 23px;
+$small-button-line-height: 23px;
+$small-button-color: #46565e;
+
+$list-bkg-color: #c5ced3;
+$list-search-bkg-color: #c4d5dc;
+
+@import "reset.scss";
+@import "css3.scss";
+@import "buttons.scss";
+@import "form_elements.scss";
+@import "tooltips.scss";
+@import "tables.scss";
+@import "style.scss";
+
+/* Overwrite BASIC.CSS markup to customize this theme */
+#app-header {
+    height: 127px !important;
+}
+    #app-header h1 a {
+        width: 191px;
+        height: 52px;
+        margin: 57px 0 0 65px;
+    }
+    #app-header ul.links {
+        height: 32px;
+    }
+        #app-header ul.links li {
+            height: 32px;
+            padding-top: 10px;
+        }
+            #app-header ul.links li.header-menu > ul,
+            #app-header ul.links li.header-menu > div {
+                top: 32px;
+            }
+                #app-header ul.links li.header-menu ul li {
+                    padding: 0;
+                }
+
+    #company-logo {
+        background: url("#{$theme-path}/company_logo.png") no-repeat;
+        width: 198px;
+        height: 42px;
+        margin: 25px 85px 0 0;
+        display: block;
+        float: right;
+        text-indent: -9999px;
+        clear: right
+    }  
+     
+.content-list {
+    background-color: #C5CED3;
+}
+    .content-list .search {
+        background: #C4D5DC;
+    }  
+    
+

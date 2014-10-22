@@ -1,0 +1,34 @@
+/*----------------------------------------------*/
+/*  CSS Markup by Arnau March @ PDI             */
+/*  Supported Markup for ie >= 7                */
+/*  CSS3 used for non-relevant design details.  */
+/*----------------------------------------------*/
+
+$basic-path: "../images/basic";
+$theme-path: "../images/basic";
+
+$font-family: Arial;
+$large-button-padding: 15px;
+$large-button-height: 27px;
+$large-button-line-height: 27px;
+$large-button-color: #46565e;
+$medium-button-padding: 15px;
+$medium-button-height: 23px;
+$medium-button-line-height: 23px;
+$medium-button-color: #46565e;
+$small-button-padding: 15px;
+$small-button-height: 23px;
+$small-button-line-height: 23px;
+$small-button-color: #46565e;
+
+$list-bkg-color: #BCC4C7;
+$list-search-bkg-color: #C9D2D5;
+
+@import "reset.scss";
+@import "css3.scss";
+@import "buttons.scss";
+@import "form_elements.scss";
+@import "tooltips.scss";
+@import "tables.scss";
+@import "style.scss";
+

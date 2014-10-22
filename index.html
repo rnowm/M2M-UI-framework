@@ -1,0 +1,728 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>UX guidelines</title>
+    <link rel="stylesheet" type="text/css" href="js/prettify/prettify.css" />
+    <link id="theme-css" rel="stylesheet" type="text/css" href="css/basic.css" />
+    <!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="css/ie7.css" /><![endif]-->
+    <!-- The following Inline style only applies to the examples, you don´t need it for your code --> 
+    <style>  
+        ul.panel .panel-body > ul.panel.example {
+            background: #5C6972 url(images/basic/backgrounds/content_body.png) repeat-x;
+        }      
+        .grid-example .column-1 { 
+            background: #eee; font-size: 12px; text-align: center; padding: 15px 0; 
+        }
+        .grid-example .column-2 { 
+            background: #ddd; font-size: 12px; text-align: center; padding: 15px 0; 
+        }
+        .grid-example .column-3 { 
+            background: #ccc; font-size: 12px; text-align: center; padding: 15px 0;
+        }
+        .grid-example .column-fluid { 
+            background: #bbb; font-size: 12px; text-align: center; padding: 15px 0; 
+        }
+        .example .column-1,
+        .example .column-2 {
+            background: none; padding: 0; text-align: left;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+    <!-- 
+        jQuery plugins: 
+        demo_only.js is used for some extra code for this guide,
+        jquery.cookie.js to store a cookie for changing theme,
+        prettify.js to apply color to code in <pre> tags, if not needed: remove onload="prettyPrint()" from body
+        and jquery.dataTables.js for extra functionality in tables,
+        maybe you don´t need it any of them!
+        
+        jquery.tipsy.js is used for tooltips,
+        csTransPie.js to allow markup in form elements,
+        jquery.layout.js for creating regions in the layout (needs jquery-ui.min.js)
+        and GUX.js (for Global UX) is where all this is glued together.
+    --> 
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/demo_only.js"></script>
+    <script type="text/javascript" src="js/prettify/prettify.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/jquery.tipsy.js"></script>
+    <script type="text/javascript" src="js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="js/csTransPie.js"></script>
+    <script type="text/javascript" src="js/GUX.js"></script>
+
+    <script type="text/javascript" src="js/jquery.layout.js"></script>
+</head>
+<!-- Use only prettify (body onload, js and css links) in case you want to format code coloring -->
+<body onload="prettyPrint()">
+    <div id="app-header" class="app-north">
+        <h1><a href="#">product name</a></h1>
+        <ul class="links">
+            <li><span><strong>Welcome! </strong>Use the following links to change theme</span></li>
+            <li class="header-menu">
+                <a href="#">Change theme</a>                
+                <ul>
+                    <li><a href="#" rel="css/basic.css">White label</a></li>
+                    <li><a href="#" rel="css/movistar.css">Movistar</a></li>
+                    <li><a href="#" rel="css/vivo.css">Vivo</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+        <div id="company-logo"><a href="#">company logo</a></div>
+    </div> <!-- /app-header -->
+
+    <ul id="app-menu" class="app-west">
+        <li class="icon-1 selected"><a href="index.html">Basic Structure</a></li>
+        <li class="icon-2"><a href="column.html">Left Column</a></li>
+        <li class="icon-3"><a href="actions.html">Massive Actions</a></li>
+    </ul>
+
+    <div id="app-content" class="app-center">
+        <ul id="app-section-title" class="content-north">
+            <li><a href="#">Menu Name</a></li>
+            <li><span>/</span></li>
+            <li><a href="#">Section Name</a></li>
+            <li style="float: right !important"><span>WARNING: Work in process! This code could change until V1 is released.</span></li>
+        </ul>  
+
+        <div class="content-body content-center ui-layout-content">
+            <div class="title-toolbar">
+                <h2>Section Title</h2>
+                <div class="right">
+                    <button class="button large neutral">Main action</button>
+                </div>
+                <ul class="links">
+                   <li>Label 1,</li>     
+                   <li>Label 2</li>     
+                </ul>
+            </div>
+            <ul class="panel">   
+                       
+<!-- PANELS --> 
+                
+                <li class="collapsible" data-title="Panels">
+                    
+                    <h2>1. Simple panels</h2>
+                    <ul class="panel">
+                        <li data-title="Panel Name">Content goes here!</li>  
+                    </ul>
+                    <p class="clear"></p> 
+                    <pre class="prettyprint">&lt;ul class="panel"&gt;<br />    &lt;li data-title="Panel Name"&gt;Content goes here!&lt;/li&gt;<br />&lt;/ul&gt;</pre>
+                    
+                    <h2>2. Collapsible panels</h2>
+                    <ul class="panel">
+                        <li class="collapsible" data-title="Panel Name">Content goes here!</li>
+                    </ul>
+                    <p class="clear"></p> 
+                    <pre class="prettyprint">&lt;ul class="panel"&gt;<br />    &lt;li class="collapsible" data-title="Panel Name"&gt;Content goes here!&lt;/li&gt;<br />&lt;/ul&gt;</pre>
+                    
+                    <p class="clear">To show a collapsible panel<strong>opened</strong> use:</p>
+                    <pre class="prettyprint">&lt;li class="collapsible open" …&gt;</pre>
+                    
+                    <h2>3. Editable panels</h2>
+                    <p>Click on the <strong>edit</strong> button to change to editable state.</p>
+                    <ul class="panel">
+                        <li class="collapsible editable open" data-title="Panel Name">Content goes here!</li>
+                    </ul>
+                    <p class="clear"></p>
+                    <pre class="prettyprint">&lt;ul class="panel"&gt;<br />    &lt;li class="collapsible editable" data-title="Panel Name"&gt;Content goes here!&lt;/li&gt;<br />&lt;/ul&gt;</pre>
+                    
+                    <h2>4. Nested panels</h2>
+                    <p>When using class "parent", panel´s background will change from white to <strong>50% opacity</strong>.</p>
+                    <pre class="prettyprint">&lt;ul class="panel"&gt;<br />    &lt;li  class="collapsible parent" …&gt;</pre>
+                    <p class="clear">Click on the edit button to see how opacity applies to editable mode.</p>
+                    <ul class="panel example clear">
+                        <li class="collapsible parent editable open" data-title="Panel 1">
+                            <ul class="panel">
+                                <li class="collapsible parent open" data-title="Panel 1.1">
+                                    <ul class="panel">
+                                        <li class="collapsible open" data-title="Panel 1.1.1">
+                                            content goes here!
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="collapsible" data-title="Panel 1.2">
+                                    content goes here!
+                                </li>
+                            </ul> 
+                        </li>
+                    </ul>                    
+                    <p class="clear"></p> 
+
+                    <h2>5. Custom panels</h2>
+                    <p>If you need to add extra markup, add <strong>custom</strong> class.</p>
+                    <pre class="prettyprint">&lt;ul class="panel custom"&gt;<br />    &lt;li&gt;<br />        &lt;div class="panel-header"&gt;<br />            &lt;span class="title"&gt;Panel Name&lt;/span&gt;<br />            &lt;ul class="toolbar right"&gt;<br />                &lt;li&gt;&lt;button class="button medium neutral"&gt;A button&lt;/button&gt;&lt;/li&gt;<br />            &lt;/ul&gt;<br />        &lt;/div&gt;<br />    &lt;/li&gt;<br />&lt;/ul&gt;</pre>
+                    <ul class="panel custom example clear">
+                        <li>
+                            <div class="panel-header">
+                                <span class="title">Panel Name</span>
+                                <ul class="toolbar right">
+                                    <li>
+                                        <button class="button medium neutral">A button</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="panel-body">Content goes here!</div>
+                        </li>  
+                    </ul>
+                </li>
+
+<!-- FORM GRID --> 
+
+                <li class="collapsible" data-title="Form grid"> 
+                    <h2>Default Form Grid</h2>
+                    <p>Forms are grouped in columns of <strong>220px</strong> width and gutter of <strong>30px</strong>. <strong></p>
+                    <p>Panels are fluid</strong> so columns will float if there is available space.</p>
+                    <div class="grid-example clear">
+                        <div class="column-1">One Column</div><div class="column-1">One Column</div><div class="column-1">One Column</div><div class="column-1">One Column</div><div class="column-1">One Column</div><div class="column-1">One Column</div>
+                    </div>
+                    <pre class="prettyprint">&lt;div class="column-1"&gt;One Column&lt;/div&gt;<br />&lt;div class="column-1"&gt;One Column&lt;/div&gt;<br />...</pre> 
+                    
+                    <h2>Other Accepted Grids</h2>
+                    <div class="grid-example clear">
+                        <div class="column-2">Two Columns</div><div class="column-3">Three Columns</div><div class="column-fluid">Fluid Column</div>
+                    </div>
+                    <pre class="prettyprint">&lt;div class="column-2"&gt;Two Columns&lt;/div&gt;<br />&lt;div class="column-3"&gt;Three Columns&lt;/div&gt;<br />&lt;div class="column-fluid"&gt;Fluid Column&lt;/div&gt;</pre> 
+                </li>
+                
+<!-- FORM ELEMENTS -->
+                
+                <li class="collapsible" data-title="Form elements">
+                    <form>  
+                        <h2>Text Input</h2>
+                        <div class="column-1 clearL">
+                            <label>Input label</label>
+                            <input type="text" placeholder="some text...">
+                        </div>
+                        <pre class="prettyprint">&lt;div class="column-1"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;Input label&lt;/label&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" placeholder="some text..."&gt;<br />&lt;/div&gt;</pre>
+
+                        <ul class="panel clear">
+                            <li class="collapsible" data-title="Input sizes and styles">
+                                <div class="column-2">
+                                    <label>Mega: 470px</label>
+                                    <input type="text" placeholder="some text...">
+                                </div>
+                                <div class="column-1 clear">
+                                    <label>Standard: 220px</label>
+                                    <input type="text" placeholder="some text...">
+                                </div>
+                                <div class="column-fluid">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <label>Standard Table: 140px</label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="text" placeholder="some text...">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="column-1 clear">
+                                    <label class="fit">Small (currency): 70px</label>
+                                    <input class="small" type="text" value="0.00"><span>&nbsp;€</span>
+                                </div>
+                                <div class="column-1 clear">
+                                    <label class="fit">Mini (percentages): 40px</label>
+                                    <input class="mini" type="text" value="1"><span>&nbsp;%</span>
+                                </div>
+                                <div class="column-1 clear">
+                                    <label>Error style</label>
+                                    <input class="input-error" title="Small description for this error." type="text" value="Incorrect value">
+                                </div>
+                            </li>
+                        </ul>
+
+                        <h2>Text Area</h2>
+                        <div class="column-1 clearL">
+                            <label>Textarea label</label>
+                            <textarea>some text...</textarea>
+                        </div>
+                        <pre class="prettyprint">&lt;div class="column-1"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;textarea label&lt;/label&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;textarea&gt;some text...&lt;/textarea&gt;<br />&lt;/div&gt;</pre>
+
+                        <ul class="panel clear">
+                            <li class="collapsible" data-title="Text Area alignment">
+                                <div class="column-1">
+                                    <div class="column-1">
+                                        <label>Input #1</label>
+                                        <input type="text" placeholder="some text...">
+                                    </div>
+                                    <label class="top-margin">Input #2</label>
+                                    <input type="text" placeholder="some text...">
+                                </div>
+                                <div class="column-1">
+                                    <label>Textarea</label>
+                                    <textarea placeholder="some text..."></textarea>
+                                </div>
+                                <div class="column-1">
+                                    <label>Input #3</label>
+                                    <input type="text" placeholder="some text...">
+                                </div>
+                                <div class="column-1">
+                                    <label>Input #4</label>
+                                    <input type="text" placeholder="some text...">
+                                </div>
+                                <div class="column-1">
+                                    <label>Input #5</label>
+                                    <input type="text" placeholder="some text...">
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <h2>Combo Box</h2>
+                        <div class="column-1 clearL">
+                            <label>Combo label</label>
+                            <select>
+                                <option>Option 1</option>
+                                <option>Option 2</option>
+                            </select>
+                        </div>
+                        <pre class="prettyprint">&lt;select&gt;<br />    &lt;option&gt;Option 1&lt;/option&gt;<br />    &lt;option&gt;Option 2&lt;/option&gt;<br />&lt;/select&gt;</pre>  
+                        
+                        <ul class="panel clear">
+                            <li class="collapsible" data-title="Combo sizes and styles">
+                                <div class="column-2">
+                                    <label>Mega: 470px</label>
+                                    <select>
+                                        <option>Option 1</option>
+                                        <option>Option 2</option>
+                                    </select>
+                                </div>
+                                <div class="column-1 clear">
+                                    <label>Standard: 220px</label>
+                                    <select>
+                                        <option>Option 1</option>
+                                        <option>Option 2</option>
+                                    </select>
+                                </div>
+                                <div class="column-fluid">
+                                    <label>Standard: 220px</label>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <label>Standard Table: 140px</label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <select>
+                                                    <option>Option 1</option>
+                                                    <option>Option 2</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="column-1 clear">
+                                    <label class="fit">Small (currency): 70px</label>
+                                    <select class="small">
+                                        <option>Option 1</option>
+                                        <option>Option 2</option>
+                                    </select>
+                                    <span>&nbsp;€</span>
+                                </div>
+                                <div class="column-1 clear">
+                                    <label class="fit">Mini (percentages): 40px</label>
+                                    <select class="mini">
+                                        <option>Option 1</option>
+                                        <option>Option 2</option>
+                                    </select>
+                                    <span>&nbsp;%</span>
+                                </div>
+                                <div class="column-1 clear" >
+                                    <label>Error style</label>
+                                    <select class="input-error" title="Small description for this error.">
+                                        <option>Option 1</option>
+                                        <option>Option 2</option>
+                                    </select>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <h2>Radio buttons</h2>
+                        <div class="column-fluid">
+                            <input type="radio" id="radio1" name="radioButtons1">
+                            <label for="radio1">Unchecked</label>
+                            <input type="radio" id="radio2" name="radioButtons1" checked>
+                            <label for="radio2">Checked</label>
+                            <input type="radio" id="radio3" name="radioButtons2" disabled>
+                            <label for="radio3">Unchecked and disabled</label>
+                            <input type="radio" id="radio4" name="radioButtons2" checked disabled>
+                            <label for="radio4">Checked and disabled</label>
+                        </div>
+                        <pre class="prettyprint">&lt;input type="radio" id="radio1" name="radioButtons1"&gt;<br />&lt;label for="radio1">Unchecked&lt;label&gt;<br />Or:<br />&lt;input type="radio" name="radioButtons1"&gt;<br />&lt;label class="radio">Unchecked&lt;label&gt;</pre>
+                        
+                        <h2>Checkbox</h2>
+                        <div class="column-fluid">
+                            <input id="ckeckbox1" type="checkbox">
+                            <label for="ckeckbox1">Unchecked</label>
+                            <input id="ckeckbox2" type="checkbox" checked>
+                            <label for="ckeckbox2">Checked</label>
+                            <input id="ckeckbox3" type="checkbox" disabled>
+                            <label for="ckeckbox3">Unchecked and disabled</label>
+                            <input id="ckeckbox4" type="checkbox" checked disabled>
+                            <label for="ckeckbox4">Checked and disabled</label>
+                        </div>
+                        <pre class="prettyprint">&lt;input type="ckeckbox" id="ckeckbox1"&gt;<br />&lt;label for="ckeckbox1">Unchecked&lt;label&gt;<br />Or:<br />&lt;input type="ckeckbox"&gt;<br />&lt;label class="ckeckbox">Unchecked&lt;label&gt;</pre>
+                        
+                        <h2>ON-OFF Checkbox</h2>
+                        <div class="column-fluid on-off">
+                            <p>
+                                <input type="checkbox" checked="checked">
+                                <label class="checkbox">Label 1</label>
+                            </p>
+                            <p>
+                                <input type="checkbox">
+                                <label class="checkbox">Label 2</label>
+                            </p>
+                        </div>
+                        <pre class="prettyprint">&lt;div class="on-off"&gt;<br />    &lt;input type="checkbox"  checked="checked"&gt;<br />    &lt;label class="checkbox"&gt;Label 1&lt;/label&gt;<br />&lt;/div"&gt;<br />Or:<br />&lt;div class="on-off"&gt;<br />    &lt;input id="checkboxOnOff" type="checkbox" checked="checked"&gt;<br />    &lt;label for="checkboxOnOff"&gt;Label 1&lt;/label&gt;<br />&lt;/div"&gt; </pre>
+                        
+                        <h2>Editable Form Example</h2>
+                        <p>Click on the edit button to see the difference between <strong>editable</strong> and <strong>read-only</strong> fields</p>
+                        <div class="example">
+                            <ul class="panel">
+                                <li class="collapsible editable open" data-title="Editable Form">
+                                    <form>
+                                        <div class="column-1 clearL">
+                                            <label>Input label</label>
+                                            <input type="text" placeholder="some text...">
+                                        </div>
+                                        
+                                        <div class="column-1">
+                                            <label>Combo label</label>
+                                            <select>
+                                                <option>Option 1</option>
+                                                <option>Option 2</option>
+                                            </select>
+                                        </div>
+                                        <div class="column-1 clearL">
+                                            <label class="group">Group label</label><br />
+                                            <input id="radioA1" type="radio" name="optionA" checked="checked">
+                                            <label for="radioA1">Label 1</label>
+                                            <input id="radioA2" type="radio" name="optionA">
+                                            <label for="radioA2">Label 2</label>
+                                        </div>
+                                        <div class="column-1">
+                                            <label class="group">Group label</label><br />
+                                            <input id="checkboxA1" type="checkbox">
+                                            <label for="checkboxA1">Label 1</label>
+                                            <input id="checkboxA2" type="checkbox" checked="checked">
+                                            <label for="checkboxA2">Label 2</label>
+                                        </div>
+                                        <div class="column-2 on-off">
+                                            <label class="group">Group label</label><br />
+                                            <input id="checkboxB1" type="checkbox">
+                                            <label for="checkboxB1">Label 1</label>
+                                            <input id="checkboxB2" type="checkbox" checked="checked">
+                                            <label for="checkboxB2">Label 2</label>
+                                        </div>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <p class="clear"></p>   
+                        <h2>Form Validation Example</h2>
+                        <p>Click on <strong>edit</strong> button to start this validation example.</p>
+                        <p>More information about form validation in: <a target="_blank"  class="link" href="http://unwrongest.com/projects/valid8/"> http://unwrongest.com/projects/valid8/</a></p>
+                        <div class="example">
+                            <ul class="panel">
+                                <li class="collapsible editable open" data-title="Form Validation">
+                                    <form>
+                                        <div class="column-1">   
+                                            <label>Username</label>
+                                            <input id="username" type="text" class="input-error" title="tooltip error example, <br/>and has two lines">
+                                        </div>
+                                        <div class="column-1">
+                                            <label>Email</label>
+                                            <input id="email" type="text">
+                                        </div>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                </li>    
+                
+<!-- BUTTONS -->
+                
+                <li class="collapsible" data-title="Buttons">
+                        <h2>1. Large buttons:</h2>
+                    <p>Class "button" can be used in both <strong>&lt;button&gt;</strong> and <strong>&lt;a&gt;</strong>.</p>
+                    <p class="clear paddingB" style="display: block; overflow: hidden">
+                        <button class="button large">default</button>
+                        <button class="button large neutral">.neutral</button>
+                        <button class="button large affirmative">.affirmative</button>
+                        <button class="button large negative">.negative</button>
+                    </p>
+                    <!--p class="clear paddingB" style="display: block; overflow: hidden">
+                        <a href="#" class="button large">default</a>
+                        <a href="#" class="button large neutral">.neutral</a>
+                        <a href="#" class="button large affirmative">.affirmative</a>
+                        <a href="#" class="button large negative">.negative</a>
+                    </p-->
+                    <!--p class="clear paddingB" style="display: block; overflow: hidden">
+                        <input type="text" class="button large" value="default" />
+                        <input type="text" class="button large neutral" value=".neutral" />
+                        <input type="text" class="button large affirmative" value=".affirmative" />
+                        <input type="text" class="button large negative" value=".negative" />
+                    <p/-->
+                    <pre class="prettyprint">&lt;button class="button large"&gt;Text&lt;/button&gt;<br/>or<br/>&lt;a href="#" class="button large"&gt;Text&lt;/a&gt;</pre> 
+                    <p class="clear">
+                        <button class="button large disabled">default</button>
+                        <button class="button large disabled neutral">.neutral</button>
+                        <button class="button large disabled affirmative">.affirmative</button>
+                        <button class="button large disabled negative">.negative</button>
+                    </p>
+                    <!--p class="clear paddingB" style="display: block; overflow: hidden">
+                        <a href="#" class="button large disabled">default</a>
+                        <a href="#" class="button large disabled neutral">.neutral</a>
+                        <a href="#" class="button large disabled affirmative">.affirmative</a>
+                        <a href="#" class="button large disabled negative">.negative</a>
+                    </p-->
+                    <pre class="prettyprint">&lt;button class="button large disabled"&gt;Text&lt;/button&gt;</pre>
+                    
+                    <h2>2. Medium buttons:</h2>
+                    <p class="clear paddingB">
+                        <button class="button medium">default</button>
+                        <button class="button medium combo">.combo</button>  
+                        <button class="button medium neutral">.neutral</button> 
+                        <button class="button medium affirmative">.affirmative</button>
+                        <button class="button medium negative">.negative</button>
+                    </p>
+                    <!--p class="clear paddingB" style="display: block; overflow: hidden">
+                        <a href="#" class="button medium">default</a>
+                        <a href="#" class="button medium combo">.combo</a>  
+                        <a href="#" class="button medium neutral">.neutral</a>
+                        <a href="#" class="button medium affirmative">.affirmative</a>
+                        <a href="#" class="button medium negative">.negative</a>
+                    </p-->
+                    <pre class="prettyprint">&lt;button class="button medium"&gt;Text&lt;/button&gt;</pre>
+                    <p class="clear">
+                        <button class="button medium disabled">default</button>
+                        <button class="button medium disabled combo">.combo</button>  
+                        <button class="button medium disabled neutral">.neutral</button> 
+                        <button class="button medium disabled affirmative">.affirmative</button>
+                        <button class="button medium disabled negative">.negative</button>  
+                    </p>
+                    <!--p class="clear paddingB" style="display: block; overflow: hidden">
+                        <a href="#" class="button medium disabled">default</a>
+                        <a href="#" class="button medium disabled combo">.combo</a> 
+                        <a href="#" class="button medium disabled neutral">.neutral</a>
+                        <a href="#" class="button medium disabled affirmative">.affirmative</a>
+                        <a href="#" class="button medium disabled negative">.negative</a>
+                    </p-->
+                    <pre class="prettyprint">&lt;button class="button medium disabled"&gt;Text&lt;/button&gt;</pre> 
+                    
+                    <h2>3. Small buttons:</h2>
+                    <p class="clear paddingB">
+                        <button class="button small">default</button>
+                        <button class="button small dark">.dark</button>
+                        <button class="button small neutral">.neutral</button>
+                        <button class="button small light">.light</button>
+                    </p>
+                    <!--p class="clear paddingB">
+                        <a href="#" class="button small">default</a>
+                        <a href="#" class="button small dark">.dark</a>
+                        <a href="#" class="button small neutral">.neutral</a>
+                        <a href="#" class="button small light">.light</a>
+                    </p-->
+                    <pre class="prettyprint">&lt;button class="button small"&gt;Text&lt;/button&gt;</pre>
+                    <p class="clear">
+                        <button class="button small disabled">default</button>
+                        <button class="button small disabled dark">.dark</button>
+                        <button class="button small disabled neutral">.neutral</button>
+                        <button class="button small disabled light">.light</button>
+                    </p>
+                    <!--p class="clear paddingB" style="display: block; overflow: hidden">
+                        <a href="#" class="button small disabled">default</a>
+                        <a href="#" class="button small disabled dark">.dark</a>
+                        <a href="#" class="button small disabled neutral">.neutral</a>
+                        <a href="#" class="button small disabled light">.light</a>
+                    </p-->
+                    <pre class="prettyprint">&lt;button class="button small disabled"&gt;Text&lt;/button&gt;</pre> 
+                </li>
+
+<!-- MODALS -->
+                
+                <li class="collapsible" data-title="Modals">
+                    <p>Use this button to launch a modal screen.</p>
+                    <button id="launchModal" class="button medium neutral">Launch modal</button>
+                    <p class="clear"></p>
+                    <pre class="prettyprint">$('#launchModal').click(function() {<br/>    $('#demoModal').css('visibility','visible');<br/>})</pre>
+                    <p class="clear">Modal markup:</p>
+                    <pre class="prettyprint">&lt;div id="demoModal" class="modal"&gt;<br/>    &lt;div class="modalWindow"&gt;<br/>        &lt;h2&gt;Modal Title&lt;/h2&gt;<br/>        &lt;div class="modalContent"&gt;Content goes here!&lt;/div&gt;<br/>        &lt;div class="modalTB"&gt;<br/>            &lt;button class="button large close">Cancel&lt;/button&gt;<br/>            &lt;button class="button large affirmative">OK&lt;/button&gt;<br/>        &lt;/div&gt;<br/>    &lt;/div&gt;<br/>&lt;/div&gt;</pre>      
+                </li>
+
+<!-- TABLES -->
+
+                <li class="collapsible" data-title="Tables">
+                    <h2>Basic tables</h2>
+                    <div class="column-fluid">
+                        <table id="table_01">
+                            <thead>
+                                <tr>
+                                    <th>Column 1</th>
+                                    <th>Column 2</th>
+                                    <th>Column 3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Row 1 Data 1</td>
+                                    <td>Row 1 Data 2</td>
+                                    <td>Row 1 Data 3</td>
+                                </tr>
+                                <tr>
+                                    <td>Row 2 Data 1</td>
+                                    <td>Row 2 Data 2</td>
+                                    <td>Row 2 Data 3</td>
+                                </tr>
+                                <tr>
+                                    <td>Row 3 Data 1</td>
+                                    <td>Row 3 Data 2</td>
+                                    <td>Row 3 Data 3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h2>Advanced tables</h2> 
+                    <p>More information about datatables plug-in in: <a target="_blank" class="link" href="http://datatables.net/"> http://datatables.net/</a></p>
+                    
+                    <div class="column-fluid">
+                        <table id="table_02">
+                            <thead>
+                                <tr>
+                                    <th>Column 1</th>
+                                    <th>Column 2</th>
+                                    <th>Column 3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Row 1 Data 1</td>
+                                    <td>Row 1 Data 2</td>
+                                    <td>Row 1 Data 3</td>
+                                </tr>
+                                <tr>
+                                    <td>Row 2 Data 1</td>
+                                    <td>Row 2 Data 2</td>
+                                    <td>Row 2 Data 3</td>
+                                </tr>
+                                <tr>
+                                    <td>Row 3 Data 1</td>
+                                    <td>Row 3 Data 2</td>
+                                    <td>Row 3 Data 3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+
+<!-- TEST -->
+
+                <!--li class="collapsible open" data-title="Test">
+                    <ul class="panel">
+                        <li class="collapsible editable open" data-title="Editable Form">
+                            <form>
+                                <div class="column-1">
+                                    <label>Input label</label>
+                                    <input type="text" placeholder="some text...">
+                                </div>
+                                <div class="column-fluid">
+                                    <input id="ckeckboxTest1" type="checkbox">
+                                    <label for="ckeckboxTest1">This is a checkbox</label>
+                                    <input id="ckeckboxTest2" type="checkbox" checked>
+                                    <label for="ckeckboxTest2">This is a checkbox</label>
+                                </div>
+                                <div class="column-fluid">
+                                    <input type="radio" name="radioTest1" checked>
+                                    <label class="radio">Radio 1</label>
+                                    <input type="radio" name="radioTest1">
+                                    <label class="radio">Radio 2</label>
+                                </div>
+                                <div class="column-fluid on-off">
+                                    <input id="ckeckboxOnOff1" type="checkbox">
+                                    <label for="ckeckboxOnOff1">Label 1</label>
+                                    <input id="ckeckboxOnOff2" type="checkbox" checked>
+                                    <label for="ckeckboxOnOff2">Label 2</label>
+                                </div>
+                                <div class="column-1">
+                                    <label>Combo Label</label>
+                                    <select>
+                                        <option>Test1</option>
+                                        <option>Test2</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </li>
+
+                        <li class="collapsible open" data-title="Editable Form">
+                            <form>
+                                <div class="column-1">
+                                    <label>Input label</label>
+                                    <input type="text" placeholder="some text...">
+                                </div>
+                                <div class="column-fluid">
+                                    <input id="ckeckboxTest3" type="checkbox">
+                                    <label for="ckeckboxTest3">Unchecked</label>
+                                    <input id="ckeckboxTest4" type="checkbox" checked>
+                                    <label for="ckeckboxTest4">Checked</label>
+                                    <input id="ckeckboxTest5" type="checkbox" disabled>
+                                    <label for="ckeckboxTest5">Unchecked and disabled</label>
+                                    <input id="ckeckboxTest6" type="checkbox" checked disabled>
+                                    <label for="ckeckboxTest6">Checked and disabled</label>
+                                </div>
+                                <div class="column-fluid on-off">
+                                    <p><input id="ckeckboxOnOff3" type="checkbox">
+                                    <label for="ckeckboxOnOff3">Label 1</label></p>
+                                    <p><input id="ckeckboxOnOff4" type="checkbox" checked>
+                                    <label for="ckeckboxOnOff4">Label 1</label></p>
+                                </div>
+                                <div class="column-fluid">
+                                    <input type="radio" id="radioTest2A" name="radioTest2">
+                                    <label for="radioTest2A" class="radio">Unchecked</label>
+                                    <input type="radio" id="radioTest2B" name="radioTest2" checked>
+                                    <label for="radioTest2B" class="radio">Checked</label>
+                                    
+                                    <input type="radio" id="radioTest3A" name="radioTest3" disabled>
+                                    <label for="radioTest3A" class="radio">Unchecked and disabled</label>
+                                    <input type="radio" id="radioTest3B" name="radioTest3" checked disabled>
+                                    <label for="radioTest3B" class="radio">Checked and disabled</label>
+                                </div>
+                                <div class="column-1">
+                                    <label>Combo Label</label>
+                                    <select>
+                                        <option>Test1</option>
+                                        <option>Test2</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </li-->
+            </ul> <!-- /panel -->
+        </div> <!-- /content-body -->
+
+    </div> <!-- /app-content --> 
+    
+    <div id="demoModal" class="modal">
+        <div class="modalWindow">
+            <h2>Modal Title</h2>
+            <div class="modalContent">
+                Content goes here!<br/> 
+            </div>
+            <div class="modalTB"> 
+                <button class="button large close">Cancel</button>
+                <button class="button large affirmative">OK</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

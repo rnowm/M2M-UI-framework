@@ -1,0 +1,347 @@
+/*  GRID  */
+.column-1, .column-2, .column-3, .column-fluid {
+    float: left;
+    margin: 0 30px 25px 0;  
+    display: block;
+    position: relative;
+    //overflow: hidden;
+}
+.column-1     { width: 220px; }
+.column-2     { width: 470px; }
+.column-3     { width: 720px; }
+.column-fluid { float: none; clear: left;  }
+
+/*============================================================= TITLE =======================================================================*/
+.cTPTitle {
+    display: none;
+}
+
+
+/*============================================================= LABEL =======================================================================*/
+label {
+    font-size: 12px;
+    color: #333; 
+    font-weight: bold;
+}
+
+/*============================================================= TEXT =======================================================================*/
+input[type="text"],
+.editable.editMode input[type="text"] {
+    margin: 2px 0 0 0;
+    height: 22px;
+    background: url("#{$basic-path}/backgrounds/input.png") repeat-x;  
+    background: url("#{$basic-path}/backgrounds/input.png") repeat-x, url("#{$basic-path}/backgrounds/input_left.png") repeat-y;  
+    border: 1px solid #999;
+    padding: 0 5px;
+    font-size: 12px;
+    color: #333;
+    width: 100%;
+}
+input[type="text"].input-error,
+.editable.editMode input[type="text"].input-error {
+    border: 1px solid #FF6000;
+}
+input[type="text"].input-ok,
+.editable.editMode input[type="text"].input-ok {
+    border: 1px solid #98c65a;
+}
+.editable input[type="text"] {
+    background: none;  
+    border: none;
+    padding: 0;
+}
+table input[type="text"] {
+    width: 140px;
+}
+input[type="text"].small {
+    width: 70px;
+    text-align: right;
+}
+input[type="text"].mini {
+    width: 40px;
+    text-align: right;
+}
+/*============================================================= TEXT-AREA =======================================================================*/
+textarea,
+.editable.editMode textarea[type="text"] {
+    margin: 2px 0 0 0;
+    height: 76px;
+    background: url("#{$basic-path}/backgrounds/input.png") repeat-x;  
+    background: url("#{$basic-path}/backgrounds/input.png") repeat-x, url("#{$basic-path}/backgrounds/input_left.png") repeat-y;  
+    border: 1px solid #999;
+    padding: 5px;
+    font-size: 12px;
+    color: #333;
+    width: 100%;
+    resize: none;
+}
+textarea.input-error,
+.editable.editMode textarea.input-error {
+    border: 1px solid #FF6000;
+}
+textarea.input-ok,
+.editable.editMode textarea.input-ok {
+    border: 1px solid #98c65a;
+}
+.editable textarea {
+    background: none;  
+    border: none;
+    padding: 0;
+}
+table textarea {
+    width: 140px;
+}
+
+/*============================================================= SEARCH =======================================================================*/
+.searchBox {
+    height: 31px !important;
+    border-bottom: 1px solid #abb1b4;
+    padding: 8px 10px 0 10px;
+    *padding-top: 7px;
+    background: #C9D2D5;
+    position: relative;
+}
+.searchBox input[type="text"] {
+    background: url("#{$basic-path}/backgrounds/list_search.png") no-repeat;
+    border: none;
+    height: 23px;
+    line-height: 23px;
+    padding-left: 10px;
+}
+.searchBox input[type="submit"] {
+    margin: 2px 0 0 0;
+    height: 23px;
+    width: 32px;
+    background: #C9D2D5 url("#{$basic-path}/backgrounds/list_search_right.png") no-repeat;
+    position: absolute;
+    top: 8px;
+    right: 0;
+    border: 0;
+}
+
+/*============================================================= SELECT =======================================================================*/
+select,
+.editable.editMode select {
+    cursor: pointer;
+    z-index: 9999 !important; /* jquery dialog */
+    position: relative;
+    @include opacity(0);
+    border: none;
+    clear: left;
+    height: 22px;
+    background: none;
+    margin: -22px 0 0 0;
+    width: 100% !important;
+    display: block;
+}
+.editable select {
+    display: none;
+}
+
+    .cTPSelect,
+    .editable.editMode .cTPSelect {
+        display: block;
+        background: url("#{$basic-path}/sprites/combo.png") no-repeat;
+        height: 22px;
+        margin: 2px 0 0 0;
+        padding: 0 0 0 8px;
+        display: block;
+        overflow: hidden;
+        position: relative;
+    }
+    .cTPSelect.input-error,
+    .editable.editMode .cTPSelect.input-error {
+        background-position: 0 -30px;
+    }
+    .editable .cTPSelect {
+        background: none;
+        padding: 0;
+    }
+
+        .cTPSelectBar,
+        .editable.editMode .cTPSelectBar {
+            cursor: pointer;
+            white-space:nowrap;
+            height: 22px;
+            line-height: 22px;
+            color: #333;
+            padding: 0;
+            font-size: 12px;
+        }
+        .editable .cTPSelectBar {
+            cursor: auto;
+        }
+
+        .cTPSelectOpen,
+        .editable.editMode .cTPSelectOpen {
+            background: #fff url("#{$basic-path}/sprites/combo-trigger.png") no-repeat;
+            height: 22px;
+            width: 21px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 1;
+        }
+        .cTPSelect.input-error .cTPSelectOpen,
+        .editable.editMode .cTPSelect.input-error .cTPSelectOpen {
+            background-position: 0 -30px;
+        }
+        .editable .cTPSelectOpen {
+            background: none;
+        }
+
+table select,
+.editable.editMode table select {
+    width: 140px;
+}
+    table .cTPSelect,
+    .editable.editMode table .cTPSelect {
+        width: 140px;
+    }
+select.small,
+.editable.editMode select.small {
+    width: 70px;
+}
+    .cTPSelect.small,
+    .editable.editMode .cTPSelect.small {
+        width: 70px;
+    }
+select.mini,
+.editable.editMode select.mini {
+    width: 40px;
+}
+    .cTPSelect.mini,
+    .editable.editMode .cTPSelect.mini {
+        width: 40px;
+    }
+
+/*============================================================= RADIO =======================================================================*/
+label.radio {
+    margin: 0 20px 0 5px;
+    *margin: 0 20px 0 0; /* ie7 fix */
+    font-weight: normal;
+}
+input[type="radio"] {
+    @include opacity(0);
+    outline:none;
+    position:relative;
+    color:white; /*opera mini*/
+    width: 13px;
+    height: 13px;
+}
+.cTPRadio {
+    position:relative;
+}
+
+.cTPRadioElem,
+.editable.editMode .cTPRadioElem {
+    outline:none;
+    display:inline-block;
+    /* ie7 hack */
+    zoom: 1;
+    *display: inline;
+    background: url("#{$basic-path}/sprites/radio.png") no-repeat;
+    width: 13px;
+    height: 13px;
+    cursor:default;
+    position:absolute;
+    /*margin-top: 3px;*/
+}
+
+/* radio checked */
+.cTPRadio .cTPCheckedR,
+.editable.editMode .cTPRadio .cTPCheckedR {
+    background-position: 0 -13px;
+ }
+ /* radio disabled */
+.cTPRadio .cTPDisabled,
+.editable .cTPRadioElem {
+   background-position: -13px 0; 
+ } 
+ /* radio disabled and checked */
+.cTPRadio .cTPDisabled.cTPCheckedR,
+.editable .cTPRadio .cTPCheckedR {
+   background-position: -13px -13px; 
+ } 
+
+/*============================================================= CHECKBOX =======================================================================*/
+label.checkbox {
+    margin: 0 20px 0 5px;
+    *margin: 0 20px 0 0; /* ie7 fix */
+    font-weight: normal;
+}
+input[type="checkbox"] {
+    @include opacity(0);
+    outline:none;
+    position:relative;
+    color:white; /*opera mini*/
+    width: 14px;
+    height: 16px; 
+}
+.cTPCheckbox {
+    position:relative;
+    background: #fff;
+}
+
+.cTPCheckboxElem,
+.editable.editMode .cTPCheckboxElem {
+    position:absolute;
+    outline:none;
+    display:inline-block;
+    /* ie7 hack */
+    zoom: 1;
+    *display: inline;
+    background: url("#{$basic-path}/sprites/checkbox.png") 0 -1px no-repeat;
+    width: 14px;
+    height: 16px; 
+    cursor:default;
+    margin-top: 2px;
+}
+
+/*checkbox checked*/
+.cTPCheckbox .cTPChecked,
+.editable.editMode .cTPCheckbox .cTPChecked { 
+    background-position: 0 -17px;
+}
+/*checkbox disabled*/
+.cTPCheckbox .cTPDisabled,
+.editable .cTPCheckboxElem {
+    background-position: -16px -1px;
+}
+/*checkbox disabled and checked*/
+.cTPCheckbox .cTPDisabled.cTPChecked,
+.editable .cTPCheckbox .cTPChecked {
+    background-position: -16px -17px;
+}
+
+/*======================================================== CHECKBOX ON/OFF =======================================================================*/
+.on-off input[type="checkbox"] {
+    width: 94px;
+}
+.on-off label.checkbox {
+    line-height: 25px;
+}
+.on-off .cTPCheckboxElem,
+.editable.editMode .on-off .cTPCheckboxElem  {
+    background: url("../images/basic/sprites/on_off.png") 0 -30px no-repeat;
+    width: 94px;
+    height: 25px;
+    margin: 2px 0 0 0;
+}
+/*checkbox checked*/
+.on-off .cTPCheckbox .cTPChecked,
+.editable.editMode .on-off .cTPCheckbox .cTPChecked { 
+    background-position: 0 0px;
+}
+/*checkbox disabled*/
+.on-off .cTPCheckbox .cTPDisabled,
+.editable .on-off .cTPCheckboxElem {
+    background-position: 0 -90px;
+}
+/*checkbox disabled and checked*/
+.on-off .cTPCheckbox .cTPDisabled.cTPChecked,
+.editable .on-off .cTPCheckbox .cTPChecked {
+    background-position: 0px -60px;
+}
+
+
